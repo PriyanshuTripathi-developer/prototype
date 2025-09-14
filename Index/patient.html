@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurSutra - Patient Dashboard</title>
+    <link rel="stylesheet" href="patient.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-spa"></i></div>
+                <div class="logo-text">AyurSutra</div>
+            </div>
+            <div class="user-controls">
+                <div class="user-info">
+                    <div class="user-avatar">RS</div>
+                    <div>
+                        <div class="user-name">Rajesh Sharma</div>
+                        <div class="user-role">Patient</div>
+                    </div>
+                </div>
+                <button class="btn btn-outline" id="notifications-btn"><i class="fas fa-bell"></i><span class="notification-badge">3</span></button>
+                <button class="btn btn-primary" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <div class="sidebar">
+                <h2 class="sidebar-title"><i class="fas fa-user-circle"></i> Patient Portal</h2>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link active" data-page="dashboard"><span class="nav-icon"><i class="fas fa-home"></i></span> Dashboard</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="schedule"><span class="nav-icon"><i class="fas fa-calendar-check"></i></span> Therapy Schedule</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="progress"><span class="nav-icon"><i class="fas fa-chart-line"></i></span> Track Progress</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="feedback"><span class="nav-icon"><i class="fas fa-comment-medical"></i></span> Submit Feedback</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-page="profile"><span class="nav-icon"><i class="fas fa-user-cog"></i></span> Profile & Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="main-content">
+                <!-- Dashboard Page -->
+                <div class="page active" id="dashboard-page">
+                    <div class="welcome-banner">
+                        <h1>Welcome, Rajesh!</h1>
+                        <p>Your Panchakarma therapy is progressing well. Today you have Abhyanga massage scheduled at 10:30 AM.</p>
+                        <div class="banner-icon"><i class="fas fa-spa"></i></div>
+                        <div class="ayurvedic-pattern"></div>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="card floating-element">
+                            <div class="card-header">
+                                <h3 class="card-title">Therapy Progress</h3>
+                                <div class="card-icon"><i class="fas fa-tasks"></i></div>
+                            </div>
+                            <div class="card-content">
+                                <p>You have completed 12 out of 21 therapy sessions</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-width="57"></div>
+                                    </div>
+                                    <div class="progress-text">
+                                        <span>57% Complete</span>
+                                        <span>9 remaining</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card floating-element" style="animation-delay: 0.2s;">
+                            <div class="card-header">
+                                <h3 class="card-title">Next Appointment</h3>
+                                <div class="card-icon"><i class="fas fa-calendar-day"></i></div>
+                            </div>
+                            <div class="card-content">
+                                <p><strong>Abhyanga Massage</strong></p>
+                                <p>Tomorrow at 10:30 AM</p>
+                                <p>With Dr. Priya Sharma</p>
+                                <button class="btn btn-outline" style="margin-top: 15px;">Reschedule</button>
+                            </div>
+                        </div>
+
+                        <div class="card floating-element" style="animation-delay: 0.4s;">
+                            <div class="card-header">
+                                <h3 class="card-title">Diet Plan</h3>
+                                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                            </div>
+                            <div class="card-content">
+                                <p>Follow the prescribed Satvic diet. Today's lunch should include khichdi with steamed vegetables.</p>
+                                <button class="btn btn-outline" style="margin-top: 15px;">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activities-section">
+                        <h2 class="section-title"><i class="fas fa-history"></i> Recent Activities</h2>
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon"><i class="fas fa-prescription"></i></div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Therapy Completed</h4>
+                                    <p class="activity-desc">Shirodhara therapy session was completed</p>
+                                    <p class="activity-time">Yesterday at 2:30 PM</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon"><i class="fas fa-sticky-note"></i></div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Feedback Submitted</h4>
+                                    <p class="activity-desc">You provided feedback about your therapy experience</p>
+                                    <p class="activity-time">2 days ago</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon"><i class="fas fa-user-md"></i></div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Consultation Updated</h4>
+                                    <p class="activity-desc">Dr. Sharma updated your treatment plan</p>
+                                    <p class="activity-time">3 days ago</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Schedule Page -->
+                <div class="page" id="schedule-page">
+                    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Therapy Schedule</h2>
+                    <div class="schedule-container">
+                        <div class="calendar-view">
+                            <div class="calendar-header">
+                                <button class="btn btn-outline"><i class="fas fa-chevron-left"></i></button>
+                                <h3>September 2023</h3>
+                                <button class="btn btn-outline"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid">
+                                <!-- Calendar will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="upcoming-sessions">
+                            <h3>Upcoming Sessions</h3>
+                            <div class="session-list">
+                                <div class="session-item">
+                                    <div class="session-date">
+                                        <div class="session-day">15</div>
+                                        <div class="session-month">SEP</div>
+                                    </div>
+                                    <div class="session-info">
+                                        <h4>Abhyanga Massage</h4>
+                                        <p>10:30 AM - 11:30 AM</p>
+                                        <p>With Dr. Priya Sharma</p>
+                                    </div>
+                                </div>
+                                <div class="session-item">
+                                    <div class="session-date">
+                                        <div class="session-day">17</div>
+                                        <div class="session-month">SEP</div>
+                                    </div>
+                                    <div class="session-info">
+                                        <h4>Shirodhara Therapy</h4>
+                                        <p>2:00 PM - 3:00 PM</p>
+                                        <p>With Dr. Amit Patel</p>
+                                    </div>
+                                </div>
+                                <div class="session-item">
+                                    <div class="session-date">
+                                        <div class="session-day">19</div>
+                                        <div class="session-month">SEP</div>
+                                    </div>
+                                    <div class="session-info">
+                                        <h4>Basti Treatment</h4>
+                                        <p>9:00 AM - 10:00 AM</p>
+                                        <p>With Dr. Priya Sharma</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Page -->
+                <div class="page" id="progress-page">
+                    <h2 class="section-title"><i class="fas fa-chart-line"></i> Therapy Progress</h2>
+                    <div class="progress-charts">
+                        <div class="chart-container">
+                            <canvas id="progress-chart"></canvas>
+                        </div>
+                        <div class="milestones">
+                            <h3>Treatment Milestones</h3>
+                            <div class="milestone-tracker">
+                                <div class="milestone completed">
+                                    <div class="milestone-icon"><i class="fas fa-check"></i></div>
+                                    <div class="milestone-info">
+                                        <h4>Initial Consultation</h4>
+                                        <p>Completed on Sept 1, 2023</p>
+                                    </div>
+                                </div>
+                                <div class="milestone completed">
+                                    <div class="milestone-icon"><i class="fas fa-check"></i></div>
+                                    <div class="milestone-info">
+                                        <h4>Purvakarma Phase</h4>
+                                        <p>Completed on Sept 5, 2023</p>
+                                    </div>
+                                </div>
+                                <div class="milestone current">
+                                    <div class="milestone-icon"><i class="fas fa-spinner"></i></div>
+                                    <div class="milestone-info">
+                                        <h4>Primary Therapies</h4>
+                                        <p>In progress (57% complete)</p>
+                                    </div>
+                                </div>
+                                <div class="milestone">
+                                    <div class="milestone-icon"><i class="fas fa-clock"></i></div>
+                                    <div class="milestone-info">
+                                        <h4>Paschatkarma Phase</h4>
+                                        <p>Starts on Sept 25, 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Page -->
+                <div class="page" id="feedback-page">
+                    <h2 class="section-title"><i class="fas fa-comment-medical"></i> Submit Feedback</h2>
+                    <div class="feedback-form">
+                        <div class="form-group">
+                            <label class="form-label">Select Therapy</label>
+                            <select class="form-input" id="therapy-select">
+                                <option value="">Select a therapy</option>
+                                <option>Abhyanga (Oil Massage)</option>
+                                <option>Shirodhara (Oil Pouring)</option>
+                                <option>Basti (Herbal Enema)</option>
+                                <option>Nasya (Nasal Therapy)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Your Feedback</label>
+                            <textarea class="form-input" id="feedback-text" rows="5" placeholder="Please share your experience..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">How are you feeling after this session?</label>
+                            <div class="feeling-scale">
+                                <div class="scale-item" data-value="1">😔 Very Poor</div>
+                                <div class="scale-item" data-value="2">😕 Poor</div>
+                                <div class="scale-item" data-value="3">😐 Neutral</div>
+                                <div class="scale-item active" data-value="4">🙂 Good</div>
+                                <div class="scale-item" data-value="5">😄 Excellent</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Would you like to report any side effects?</label>
+                            <div class="side-effects">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="side-effects" value="nausea"> Nausea
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="side-effects" value="dizziness"> Dizziness
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="side-effects" value="headache"> Headache
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="side-effects" value="fatigue"> Fatigue
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="side-effects" value="other"> Other
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="submit-feedback">Submit Feedback</button>
+                    </div>
+                </div>
+
+                <!-- Profile Page -->
+                <div class="page" id="profile-page">
+                    <h2 class="section-title"><i class="fas fa-user-cog"></i> Profile & Settings</h2>
+                    <div class="profile-container">
+                        <div class="profile-info">
+                            <div class="profile-avatar">
+                                <div class="avatar-image">RS</div>
+                                <button class="btn btn-outline">Change Photo</button>
+                            </div>
+                            <div class="profile-details">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-input" value="Rajesh Sharma">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" value="rajesh@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-input" value="+91 9876543210">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-input" value="1985-07-15">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-input" rows="3">123 Ayurveda Lane, Pune, Maharashtra</textarea>
+                                </div>
+                                <button class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                        <div class="notification-settings">
+                            <h3>Notification Preferences</h3>
+                            <div class="settings-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Email Notifications
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> SMS Notifications
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Push Notifications
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Notification Time</label>
+                                <select class="form-input">
+                                    <option>1 hour before</option>
+                                    <option selected>2 hours before</option>
+                                    <option>1 day before</option>
+                                    <option>2 days before</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notification-panel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="close-panel">&times;</button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="notification-content">
+                    <p>Your Abhyanga session is scheduled for tomorrow at 10:30 AM</p>
+                    <span class="notification-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notification-icon"><i class="fas fa-sticky-note"></i></div>
+                <div class="notification-content">
+                    <p>Dr. Sharma has updated your treatment plan</p>
+                    <span class="notification-time">5 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon"><i class="fas fa-info-circle"></i></div>
+                <div class="notification-content">
+                    <p>Remember to follow the diet plan before your session tomorrow</p>
+                    <span class="notification-time">Yesterday</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="patient.js"></script>
+</body>
+</html>
